@@ -100,7 +100,6 @@ public class MainActivity extends AppCompatActivity {
         AudioTrack localAudioTrack = peerConnectionFactory.createAudioTrack("101", audioSource);
 
 
-
         //创建SurfaceViewRenderer,并初始化
         SurfaceViewRenderer videoView = findViewById(R.id.surface_rendeer);
         videoView.setMirror(true);
@@ -126,9 +125,9 @@ public class MainActivity extends AppCompatActivity {
                 videoView.onFrame(videoFrame);
             }
         });
-
         //开始从相机捕捉帧，参数分别为宽 ，高，fps
         videoCapturerAndroid.startCapture(1000, 1000, 30);
+
     }
 
     private VideoCapturer createVideoCapturer() {
